@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:design_advisor;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+  h2:
+    console:
+      enabled: true
+
+# DeepSeek AI
+design-ai:
+  ai:
+    api-key: ${DEEPSEEK_API_KEY:your-api-key-here}
+    base-url: https://api.deepseek.com
+    model: deepseek-chat
+    embedding-model: deepseek-embed
+  rag:
+    enabled: true
+    chunk-size: 500
+    chunk-overlap: 100
+    top-k: 5
+    similarity-threshold: 0.6

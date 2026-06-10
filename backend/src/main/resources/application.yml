@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: design-ai-advisor
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB
